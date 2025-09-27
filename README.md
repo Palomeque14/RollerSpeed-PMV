@@ -9,3 +9,10 @@ git branch -M main
 # añadir remote (ejemplo HTTPS)
 git remote add origin https://github.com/TU_USUARIO/rollerspeed.git
 git push -u origin main
+
+## Documentación API (OpenAPI / Swagger)
+
+Al ejecutar el proyecto localmente:
+
+```bash
+./mvnw spring-boot:run
