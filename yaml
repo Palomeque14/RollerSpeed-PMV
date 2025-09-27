@@ -1,0 +1,36 @@
+
+> Si vas a desplegar la app (Heroku, Render, Railway...), reemplaza `localhost:8080` por la URL pública del despliegue.
+
+---
+
+## 5) (Opcional pero recomendable) Añadir CI con GitHub Actions
+Crea archivo: `.github/workflows/ci.yml` con este contenido para compilar y ejecutar tests:
+
+```yaml
+name: CI - build & test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Build with Maven
+        run: mvn -B -DskipTests=false clean package
