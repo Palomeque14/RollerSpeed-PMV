@@ -18,4 +18,4 @@ Al ejecutar el proyecto localmente:
 ./mvnw spring-boot:run
 
 ## Evidencia (Video)
-Video explicativo: https://youtu.be/TU_VIDEO_ID  (o enlace de Drive)
+Video explicativo: 
