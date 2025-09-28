@@ -18,4 +18,5 @@ Al ejecutar el proyecto localmente:
 ./mvnw spring-boot:run
 
 ## Evidencia (Video)
-Video explicativo: 
+Video explicativo: https://drive.google.com/file/d/1yDBCgtZwQYOL2QKyrjOCWMw5gAhCE9z1/view?usp=sharing
+
